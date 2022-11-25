@@ -1,16 +1,22 @@
 import React from 'react'
-import {BrowerRouter,Routes,Route} from "react-router-dom"
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import AddBooks from '../features/books/AddBooks'
+import ViewBooks from '../features/books/ViewBooks'
+import Navbar from '../layouts/Navbar'
 import Error from '../pages/Error'
 import Home from '../pages/Home'
-const index = () => {
+const Index = () => {
   return (
-   <BrowerRouter>
+   <BrowserRouter>
+   <Navbar/>
    <Routes>
     <Route path="/" element={<Home/>}></Route>
+    <Route path="/show-books" element={<ViewBooks/>}></Route>
+    <Route path="/add-book" element={<AddBooks/>}></Route>
     <Route path="*" element={<Error/>}></Route>
    </Routes>
-   </BrowerRouter>
+   </BrowserRouter>
   )
 }
 
-export default index
+export default Index

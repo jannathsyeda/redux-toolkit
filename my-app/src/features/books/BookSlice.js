@@ -13,12 +13,15 @@ export const booksSlice=createSlice(
          initialState: initialBooks,
          reducers:{
             showBooks:(state)=>state,
+            addBook: (state, action) => {
+              state.books.push(action.payload);
+            },
 
          },
 
     })
 
-    export const{showBooks}=booksSlice.actions;
+    export const{showBooks,addBook}=booksSlice.actions;
     export default booksSlice.reducer;
 
   
